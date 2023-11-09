@@ -23,3 +23,7 @@ keymap("n", "<Left>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
+
+
+-- map <F5> <Esc>:w<CR>:!cargo run --bin %:t<CR>
+vim.keymap.set({ "n", "i" }, "<leader>r", "<Esc>:w<CR>:!cargo run --bin %:t<CR>", default_opts)
