@@ -111,16 +111,15 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'nyoom-engineering/nyoom',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'nyoom'
-  --   end,
-  -- },
-  --
-  vim.cmd.colorscheme('habamax'),
+  {
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'onedark'
+    end,
+  },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -128,7 +127,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'habamax',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
