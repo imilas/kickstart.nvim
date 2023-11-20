@@ -1,0 +1,7 @@
+# make new file
+:e newfile.txt :split :sp :splitv :vs
+# show buffers
+:ls :files :buffers
+:tab terminal # open terminal in new tab page
+:terminal ++curwin open t:tab terminal # open terminal in new tab page
+:terminal ++curwin open terminal in current windowerminal in current window
