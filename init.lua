@@ -536,3 +536,22 @@ rt.setup({
     end,
   },
 })
+
+-- vim.cmd([[
+-- set runtimepath^=~/.vim runtimepath+=~/.vim/after
+-- let &packpath = &runtimepath
+-- source ~/.vimrc
+-- ]])
+--
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.frag" },
+  command = [[ set filetype=c]],
+})
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.vert" },
+  command = [[ set filetype=c]],
+})
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.wgsl" },
+  command = [[ set filetype=c]],
+})
