@@ -83,5 +83,25 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup()
+    dap.adapters.codelldb = {
+      type = "executable",
+      command = "/usr/bin/lldb-vscode", -- adjust as needed
+      name = "lldb",
+    }
+
+    dap.configurations.rust = {
+      {
+        name = "Rust debug",
+        type = "codelldb",
+        request = "launch",
+        showDisassembly = "never",
+        program = function()
+          vim.fn.jobstart('cargo build')
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = true,
+      },
+    }
   end,
 }
