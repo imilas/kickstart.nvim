@@ -28,3 +28,4 @@ keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 -- map <F5> <Esc>:w<CR>:!cargo run --bin %:t<CR>
 vim.keymap.set("n", "<leader>r", "<Esc>:w<CR>:!cargo run --bin %:t:r<CR>", default_opts)
 vim.keymap.set("n", "<leader>e", "<Esc>:w<CR>:!cargo run --bin main<CR>", default_opts)
+vim.keymap.set("n", "<leader>t", "<Esc>:w<CR>:!cargo run --example %:t:r<CR>", default_opts)
